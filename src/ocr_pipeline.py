@@ -10,7 +10,7 @@ ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 def extract_text_from_pdf(pdf_path):
     doc = fitz.open(pdf_path)
-    full_text = ""
+    full_text += f"\n\n## Page {page.number + 1}\n\n"
 
     for page in doc:
         pix = page.get_pixmap()
